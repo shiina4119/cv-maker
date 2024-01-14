@@ -9,3 +9,5 @@ npm install
 npm run dev
 ```
 Visit localhost:5173
+
+Live preview: https://cv-maker-sooty.vercel.app/
