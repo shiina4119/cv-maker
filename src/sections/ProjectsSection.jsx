@@ -1,10 +1,10 @@
 export default function ProjectsSection({ project }) {
-    let details = project.details.split(".");
+    let details = project.details.split("\n");
     details = [...details].filter((detail) => detail !== "");
     details.map(detail => detail.trim());
     return (
         <div className="container-fluid">
-            <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between mb-2">
                 <div className="d-flex justify-content-start">
                     <h3>
                         <span className="fw-bold">{project.title}</span>
@@ -17,7 +17,9 @@ export default function ProjectsSection({ project }) {
                 </a>
             </div>
             {details.map((detail, index) => (
-                <div key={index}>&nbsp;&#x2022;&nbsp;{detail}&#46;</div>
+                <ul key={index} className="mb-2">
+                    <li>{detail}</li>
+                </ul>
             ))}
             <br />
         </div>

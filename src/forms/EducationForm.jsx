@@ -4,7 +4,7 @@ export default function EducationForm({ school, handleChange }) {
     return (
         <Form onChange={(e) => e.preventDefault()}>
             <Form.Group className="mb-3">
-                <Form.Label htmlFor="name">School Name</Form.Label>
+                <Form.Label htmlFor="name">School name</Form.Label>
                 <Form.Control
                     name="name"
                     type="text"
@@ -13,7 +13,7 @@ export default function EducationForm({ school, handleChange }) {
                 />
             </Form.Group>
             <Form.Group className="mb-3">
-                <Form.Label htmlFor="details">School details</Form.Label>
+                <Form.Label htmlFor="details">Subject</Form.Label>
                 <Form.Control
                     name="details"
                     type="text"

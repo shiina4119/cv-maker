@@ -15,11 +15,12 @@ export default function ProjectsForm({ project, handleChange }) {
             <Form.Group className="mb-3">
                 <Form.Label htmlFor="Details">Details</Form.Label>
                 <Form.Control
+                    as="textarea"
                     name="details"
-                    type="text"
                     value={project.details}
                     onChange={handleChange}
                 />
+                <Form.Text className="text-muted">Each line will be added as a bullet point</Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label htmlFor="link">Project Link</Form.Label>

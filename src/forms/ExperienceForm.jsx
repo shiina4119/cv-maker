@@ -24,11 +24,12 @@ export default function ExperienceForm({ experience, handleChange }) {
             <Form.Group className="mb-3">
                 <Form.Label htmlFor="description">Description</Form.Label>
                 <Form.Control
+                    as="textarea"
                     name="description"
-                    type="text"
                     value={experience.description}
                     onChange={handleChange}
                 />
+                <Form.Text className="text-muted">Each line will be added as a bullet point</Form.Text>
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label htmlFor="location">Location</Form.Label>
@@ -59,55 +60,4 @@ export default function ExperienceForm({ experience, handleChange }) {
             </Form.Group>
         </Form>
     )
-    /* return (
-        <form onChange={(e) => e.preventDefault()}>
-            <label htmlFor="position">Position</label>
-            <input
-                name="position"
-                type="text"
-                value={experience.position}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="organization">Organization</label>
-            <input
-                name="organization"
-                type="text"
-                value={experience.organization}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="description">Description</label>
-            <textarea
-                name="description"
-                value={experience.description}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="location">Location</label>
-            <input
-                name="location"
-                type="text"
-                value={experience.location}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="start">Start</label>
-            <input
-                name="start"
-                type="text"
-                value={experience.start}
-                onChange={handleChange}
-            />
-            <br />
-            <label htmlFor="end">End</label>
-            <input
-                name="end"
-                type="text"
-                value={experience.end}
-                onChange={handleChange}
-            />
-            <br />
-        </form>
-    ); */
 }

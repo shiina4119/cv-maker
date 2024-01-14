@@ -40,7 +40,7 @@ export default function AboutForm({ data, handleChange }) {
 						</Form.Group>
 						<Form.Label htmlFor="link">Github profile</Form.Label>
 						<InputGroup className="mb-3">
-							<InputGroup.Text>https://github.com/</InputGroup.Text>
+							<InputGroup.Text>https://www.github.com/</InputGroup.Text>
 							<Form.Control
 								name="link"
 								type="text"
