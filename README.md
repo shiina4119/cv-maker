@@ -1,6 +1,6 @@
 # CV Maker
 
-Built using React, with styling provided by react-bootstrap.
+Built using React and Vite, with styling provided by react-bootstrap.
 
 ### To run locally:
 
@@ -15,5 +15,6 @@ Live preview: https://cv-maker-sooty.vercel.app/
 ### TODO:
 
 - finish skill section
+- add localStorage
 - add download resume option
 - add more templates
