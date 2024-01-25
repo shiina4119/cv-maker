@@ -8,7 +8,7 @@ export default function EducationForm({ school, handleChange }) {
                 <Form.Control
                     name="name"
                     type="text"
-                    value={school.name}
+                    value={school.name || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -17,7 +17,7 @@ export default function EducationForm({ school, handleChange }) {
                 <Form.Control
                     name="details"
                     type="text"
-                    value={school.details}
+                    value={school.details || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -26,7 +26,7 @@ export default function EducationForm({ school, handleChange }) {
                 <Form.Control
                     name="location"
                     type="text"
-                    value={school.location}
+                    value={school.location || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -35,7 +35,7 @@ export default function EducationForm({ school, handleChange }) {
                 <Form.Control
                     name="start"
                     type="text"
-                    value={school.start}
+                    value={school.start || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -44,7 +44,7 @@ export default function EducationForm({ school, handleChange }) {
                 <Form.Control
                     name="end"
                     type="text"
-                    value={school.end}
+                    value={school.end || ''}
                     onChange={handleChange}
                 />
             </Form.Group>

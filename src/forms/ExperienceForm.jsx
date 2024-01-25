@@ -8,7 +8,7 @@ export default function ExperienceForm({ experience, handleChange }) {
                 <Form.Control
                     name="position"
                     type="text"
-                    value={experience.position}
+                    value={experience.position || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -17,7 +17,7 @@ export default function ExperienceForm({ experience, handleChange }) {
                 <Form.Control
                     name="organization"
                     type="text"
-                    value={experience.organization}
+                    value={experience.organization || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -26,7 +26,7 @@ export default function ExperienceForm({ experience, handleChange }) {
                 <Form.Control
                     as="textarea"
                     name="description"
-                    value={experience.description}
+                    value={experience.description || ''}
                     onChange={handleChange}
                 />
                 <Form.Text className="text-muted">Each line will be added as a bullet point</Form.Text>
@@ -36,7 +36,7 @@ export default function ExperienceForm({ experience, handleChange }) {
                 <Form.Control
                     name="location"
                     type="text"
-                    value={experience.location}
+                    value={experience.location || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -45,7 +45,7 @@ export default function ExperienceForm({ experience, handleChange }) {
                 <Form.Control
                     name="start"
                     type="text"
-                    value={experience.start}
+                    value={experience.start || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -54,7 +54,7 @@ export default function ExperienceForm({ experience, handleChange }) {
                 <Form.Control
                     name="end"
                     type="text"
-                    value={experience.end}
+                    value={experience.end || ''}
                     onChange={handleChange}
                 />
             </Form.Group>

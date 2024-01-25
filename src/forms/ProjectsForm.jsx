@@ -8,7 +8,7 @@ export default function ProjectsForm({ project, handleChange }) {
                 <Form.Control
                     name="title"
                     type="text"
-                    value={project.title}
+                    value={project.title || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -17,7 +17,7 @@ export default function ProjectsForm({ project, handleChange }) {
                 <Form.Control
                     as="textarea"
                     name="details"
-                    value={project.details}
+                    value={project.details || ''}
                     onChange={handleChange}
                 />
                 <Form.Text className="text-muted">Each line will be added as a bullet point</Form.Text>
@@ -27,7 +27,7 @@ export default function ProjectsForm({ project, handleChange }) {
                 <Form.Control
                     name="link"
                     type="text"
-                    value={project.link}
+                    value={project.link || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
@@ -36,7 +36,7 @@ export default function ProjectsForm({ project, handleChange }) {
                 <Form.Control
                     name="skills"
                     type="text"
-                    value={project.skills}
+                    value={project.skills || ''}
                     onChange={handleChange}
                 />
             </Form.Group>
