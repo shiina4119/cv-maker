@@ -94,14 +94,12 @@ export default function App() {
                     <Stack gap={3}>
                         <Button
                             variant="warning"
-                            onClick={() =>
-                                setDefaults(
-                                    setPersonalDetails,
-                                    setSchoolList,
-                                    setExperienceList,
-                                    setProjectList
-                                )
-                            }
+                            onClick={() => setDefaults(
+                                setPersonalDetails,
+                                setSchoolList,
+                                setExperienceList,
+                                setProjectList
+                            )}
                         >
                             Fill with default values
                         </Button>
@@ -124,25 +122,13 @@ export default function App() {
                                                 school={school}
                                                 handleChange={(e) => handleSchoolChange(e, index)}
                                             />
-                                            <Button
-                                                variant="danger"
-                                                size="sm"
-                                                onClick={() => deleteSchoolButton(index)}
-                                            >
-                                                Delete
-                                            </Button>
+                                            <Button variant="danger" size="sm" onClick={() => deleteSchoolButton(index)}>Delete</Button>
                                         </Accordion.Body>
                                     </Accordion.Item>
                                 );
                             })}
                         </Accordion>
-                        <Button
-                            variant="primary"
-                            size="sm"
-                            onClick={() => addNewSchoolButton()}
-                        >
-                            Add School
-                        </Button>
+                        <Button variant="primary" size="sm" onClick={() => addNewSchoolButton()}>Add School</Button>
                     </Stack>
                     <br />
                     <Stack gap={3}>
@@ -157,26 +143,14 @@ export default function App() {
                                                 experience={experience}
                                                 handleChange={(e) => handleExperienceChange(e, index)}
                                             />
-                                            <Button
-                                                variant="danger"
-                                                size="sm"
-                                                onClick={() => deleteExperienceButton(index)}
-                                            >
-                                                Delete
-                                            </Button>
+                                            <Button variant="danger" size="sm" onClick={() => deleteExperienceButton(index)}>Delete</Button>
                                         </Accordion.Body>
                                     </Accordion.Item>
                                 );
                             })}
                         </Accordion>
-                        <Button
-                            variant="primary"
-                            size="sm"
-                            onClick={() => addNewExperienceButton()}
-                        >
-                            Add Experience
-                        </Button>
-                    </Stack>
+                        <Button variant="primary" size="sm" onClick={() => addNewExperienceButton()}>Add Experience</Button>
+                    </Stack>                    
                     <br />
                     <Stack gap={3}>
                         <h5>Projects: {projectList.length}</h5>
@@ -190,25 +164,13 @@ export default function App() {
                                                 project={project}
                                                 handleChange={(e) => handleProjectChange(e, index)}
                                             />
-                                            <Button
-                                                variant="danger"
-                                                size="sm"
-                                                onClick={() => deleteProjectButton(index)}
-                                            >
-                                                Delete
-                                            </Button>
+                                            <Button variant="danger" size="sm" onClick={() => deleteProjectButton(index)}>Delete</Button>
                                         </Accordion.Body>
                                     </Accordion.Item>
                                 );
                             })}
                         </Accordion>
-                        <Button
-                            variant="primary"
-                            size="sm"
-                            onClick={() => addNewProjectButton()}
-                        >
-                            Add Project
-                        </Button>
+                        <Button variant="primary" size="sm" onClick={() => addNewProjectButton()}>Add Project</Button>
                     </Stack>
                 </Col>
 
