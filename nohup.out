@@ -1,0 +1,4 @@
+
+(emacs:5850): Gtk-CRITICAL **: 17:05:13.987: gtk_distribute_natural_allocation: assertion 'extra_space >= 0' failed
+
+(emacs:6235): Gtk-CRITICAL **: 17:09:24.153: gtk_distribute_natural_allocation: assertion 'extra_space >= 0' failed
