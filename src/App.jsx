@@ -195,7 +195,6 @@ export default function App() {
                     <hr className="mt-0" />
                 </Col>
             </Row>
-            <br />
         </Container>
     );
 }
