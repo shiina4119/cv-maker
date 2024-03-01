@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import { Accordion, Button, Container, Row, Col, Stack } from "react-bootstrap";
 import AboutForm from "./forms/AboutForm";
 import AboutSection from "./sections/AboutSection";
@@ -9,6 +9,7 @@ import ProjectsSection from "./sections/ProjectsSection";
 import ExperienceForm from "./forms/ExperienceForm";
 import ExperienceSection from "./sections/ExperienceSection";
 import { setDefaults } from "./setDefaults.js";
+import schoolListReducer from "./reducers/schoolListReducer.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -20,27 +21,26 @@ export default function App() {
         setPersonalDetails(newPersonalDetails);
     };
 
-    const [schoolList, setSchoolList] = useState([]);
-    const handleSchoolChange = (e, i) => {
-        let newSchoolList = [...schoolList];
-        newSchoolList[i][e.target.name] = e.target.value;
-        setSchoolList(newSchoolList);
+    const [schoolList, dispatch] = useReducer(schoolListReducer, []);
+    
+    function handleSchoolChange(e, i) {
+	dispatch({
+	    type: 'change',
+	    index: i,
+	    event: e,
+	})
     };
-    const addNewSchoolButton = () => {
-        let newSchool = {
-            name: "",
-            details: "",
-            location: "",
-            start: "",
-            end: "",
-        };
-        setSchoolList([...schoolList, newSchool]);
+    function addNewSchoolButton() {
+	dispatch({
+	    type: 'add',
+	})
     };
-    const deleteSchoolButton = (i) => {
-        let newSchoolList = [...schoolList];
-        newSchoolList.splice(i, 1);
-        setSchoolList(newSchoolList);
-    };
+    function deleteSchoolButton(i) {
+	dispatch({
+	    type: 'delete',
+	    index: i,
+	})
+    };  
 
     const [experienceList, setExperienceList] = useState([]);
     const handleExperienceChange = (e, i) => {
@@ -96,7 +96,7 @@ export default function App() {
                             variant="warning"
                             onClick={() => setDefaults(
                                 setPersonalDetails,
-                                setSchoolList,
+                                // setSchoolList,
                                 setExperienceList,
                                 setProjectList
                             )}
