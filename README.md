@@ -14,8 +14,9 @@ Live preview: https://cv-maker-sooty.vercel.app/
 
 ### TODO:
 
-- refactor with useReducer
+- ~~refactor with useReducer~~
+- seperate template logic with useContext
+- add templates
 - finish skill section
 - add localStorage
 - add download resume option
-- add more templates
