@@ -8,8 +8,7 @@ import ProjectsForm from "./forms/ProjectsForm";
 import ProjectsSection from "./sections/ProjectsSection";
 import ExperienceForm from "./forms/ExperienceForm";
 import ExperienceSection from "./sections/ExperienceSection";
-import { setDefaults } from "./setDefaults.js";
-import schoolListReducer from "./reducers/schoolListReducer.js";
+import reducer from "./reducer.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -21,69 +20,85 @@ export default function App() {
         setPersonalDetails(newPersonalDetails);
     };
 
-    const [schoolList, dispatch] = useReducer(schoolListReducer, []);
-    
+    const [schoolList, schoolListDispatch] = useReducer(reducer, []);    
     function handleSchoolChange(e, i) {
-	dispatch({
+	schoolListDispatch({
 	    type: 'change',
 	    index: i,
 	    event: e,
 	})
     };
     function addNewSchoolButton() {
-	dispatch({
+	schoolListDispatch({
 	    type: 'add',
+	    newObj: {
+		name: "",
+		details: "",
+		location: "",
+		start: "",
+		end: "",
+	    },
 	})
     };
     function deleteSchoolButton(i) {
-	dispatch({
+	schoolListDispatch({
 	    type: 'delete',
 	    index: i,
 	})
     };  
 
-    const [experienceList, setExperienceList] = useState([]);
-    const handleExperienceChange = (e, i) => {
-        let newExperienceList = [...experienceList];
-        newExperienceList[i][e.target.name] = e.target.value;
-        setExperienceList(newExperienceList);
+    const [experienceList, experienceListDispatch] = useReducer(reducer, []);
+    function handleExperienceChange(e, i) {
+	experienceListDispatch({
+	    type: 'change',
+	    index: i,
+	    event: e,
+	})
     };
-    const addNewExperienceButton = () => {
-        let newExperience = {
-            position: "",
-            organization: "",
-            description: "",
-            location: "",
-            start: "",
-            end: "",
-        };
-        setExperienceList([...experienceList, newExperience]);
+    function addNewExperienceButton() {
+	experienceListDispatch({
+	    type: 'add',
+	    newObj: {
+		position: "",
+		organization: "",
+		description: "",
+		location: "",
+		start: "",
+		end: "",
+	    },
+	})
     };
-    const deleteExperienceButton = (i) => {
-        let newExperienceList = [...experienceList];
-        newExperienceList.splice(i, 1);
-        setExperienceList(newExperienceList);
+    function deleteExperienceButton(i) {
+	experienceListDispatch({
+	    type: 'delete',
+	    index: i,
+	})
     };
 
-    const [projectList, setProjectList] = useState([]);
-    const handleProjectChange = (e, i) => {
-        let newProjectList = [...projectList];
-        newProjectList[i][e.target.name] = e.target.value;
-        setProjectList(newProjectList);
+    const [projectList, projectListDispatch] = useReducer(reducer, []);
+    function handleProjectChange(e, i) {
+	projectListDispatch({
+	    type: 'change',
+	    index: i,
+	    event: e,
+	})
     };
-    const addNewProjectButton = () => {
-        let newProject = {
-            title: "",
-            details: "",
-            link: "",
-            skills: "",
-        };
-        setProjectList([...projectList, newProject]);
+    function addNewProjectButton() {
+	projectListDispatch({
+	    type: 'add',
+	    newObj: {
+		title: "",
+		details: "",
+		link: "",
+		skills: "",
+            },
+	})
     };
-    const deleteProjectButton = (i) => {
-        let newProjectList = [...projectList];
-        newProjectList.splice(i, 1);
-        setProjectList(newProjectList);
+    function deleteProjectButton(i) {
+	projectListDispatch({
+	    type: 'delete',
+	    index: i,
+	})
     };
 
     return (
@@ -92,17 +107,17 @@ export default function App() {
             <Row>
                 <Col xs={3}>
                     <Stack gap={3}>
-                        <Button
-                            variant="warning"
-                            onClick={() => setDefaults(
-                                setPersonalDetails,
-                                // setSchoolList,
-                                setExperienceList,
-                                setProjectList
-                            )}
-                        >
-                            Fill with default values
-                        </Button>
+                        {/* <Button */} 
+                        {/*     variant="warning" */} 
+                        {/*     onClick={() => setDefaults( */} 
+                        {/*         setPersonalDetails, */} 
+                        {/*         // setSchoolList, */} 
+                        {/*         setExperienceList, */} 
+                        {/*         setProjectList */} 
+                        {/*     )} */} 
+                        {/* > */} 
+                        {/*     Fill with default values */} 
+                        {/* </Button> */} 
                         <h5>About</h5>
                         <AboutForm
                             data={personalDetails}
@@ -195,6 +210,7 @@ export default function App() {
                     <hr className="mt-0" />
                 </Col>
             </Row>
+	    <br />
         </Container>
     );
 }
