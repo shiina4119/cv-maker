@@ -14,6 +14,7 @@ Live preview: https://cv-maker-sooty.vercel.app/
 
 ### TODO:
 
+- refactor with useReducer
 - finish skill section
 - add localStorage
 - add download resume option
